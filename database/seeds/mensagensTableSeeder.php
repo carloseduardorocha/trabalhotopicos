@@ -14,13 +14,17 @@ class mensagensTableSeeder extends Seeder
         Mensagem::create([
             'titulo' => 'Prova',
             'texto' => 'Prova sobre capacitores',
-            'autor' => 'Carlos Rocha'
+            'autor' => 'Carlos Rocha',
+            'user_id' => 1,
+            'atividade_id' => 1
         ]);
 
         Mensagem::create([
             'titulo' => 'cama faz bem',
             'texto' => 'dormir é bom',
-            'autor' => 'Carlos Rocha'
+            'autor' => 'Carlos Rocha',
+            'user_id' => 1,
+            'atividade_id' => 1
         ]);
     }
 }
