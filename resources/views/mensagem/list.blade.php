@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <h1>Lista de Mensagens</h1>
 <hr>
 @auth
@@ -18,6 +20,6 @@
     <br>
 	@endauth
 @endforeach
-
+@endsection
 
 <!-- \Carbon\Carbon::parse($a->scheduledto)->format('d/m/Y h:m')  -->
