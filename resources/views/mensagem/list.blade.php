@@ -20,6 +20,8 @@
     <br>
 	@endauth
 @endforeach
+
+{{ $mensagens->links() }}
 @endsection
 
 <!-- \Carbon\Carbon::parse($a->scheduledto)->format('d/m/Y h:m')  -->

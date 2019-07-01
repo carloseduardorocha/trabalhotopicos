@@ -19,10 +19,10 @@ class AtividadeController extends Controller
     public function index()
     {
         if(Auth::check() ){
-            $listaAtividades = Atividade::where('user_id', Auth::id() )->get();
+            $listaAtividades = Atividade::where('user_id', Auth::id() )->paginate(3);
         }
         else{
-            $listaAtividades = Atividade::all();
+            $listaAtividades = Atividade::paginate(3);
         }
         
         return view('atividade.list',['atividades' => $listaAtividades]);
@@ -86,7 +86,7 @@ class AtividadeController extends Controller
      */
     public function show($id)
     {
-        $atividade = Atividade::find($id)->with('mensagens')->get()->first();
+        $atividade = Atividade::where('id',$id)->with('mensagens')->get()->first();
         return view('atividade.show',['atividade' => $atividade]);
     }
 
