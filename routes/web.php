@@ -22,6 +22,10 @@ Route::group(['middleware' => 'auth'], function(){
 
 //ROUTE ATIVIDADES
 Route::get('/atividades/create', 'AtividadeController@create');
+
+//ROUTE PDF
+Route::get('/atividades/visualiza', 'AtividadeController@relatorioAtividades');
+
 Route::post('/atividades', 'AtividadeController@store');
 Route::get('/atividades/{id}', 'AtividadeController@show');
 Route::get('/atividades/{id}/edit', 'AtividadeController@edit');
@@ -38,6 +42,9 @@ Route::get('/mensagens/{id}/edit', 'MensagemController@edit');
 Route::put('/mensagens/{id}', 'MensagemController@update');
 Route::get('/mensagens/{id}/delete', 'MensagemController@delete');
 Route::delete('/mensagens/{id}', 'MensagemController@destroy');
+
+
+
 });
 
 

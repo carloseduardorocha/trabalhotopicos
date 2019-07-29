@@ -28,6 +28,12 @@ class AtividadeController extends Controller
         return view('atividade.list',['atividades' => $listaAtividades]);
     }
 
+    public function relatorioAtividades(){
+        $atividades = Atividade::with('mensagens')->get();
+        //dd($atividades);
+        return view('pdf.visualiza',['atividades' => $atividades]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
