@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.report')
 
 @section('content')
 <h1>Lista de Atividades e Mensagens</h1>

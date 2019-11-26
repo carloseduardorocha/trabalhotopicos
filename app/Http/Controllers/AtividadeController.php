@@ -31,7 +31,9 @@ class AtividadeController extends Controller
     public function relatorioAtividades(){
         $atividades = Atividade::with('mensagens')->get();
         //dd($atividades);
-        return view('pdf.visualiza',['atividades' => $atividades]);
+        return \PDF::loadView('pdf.visualiza', compact('atividades'))
+        ->setPaper('a4', 'landscape')
+        ->download('Relatório.pdf');
     }
 
     /**
